@@ -12,10 +12,18 @@ export default makeStyles((theme) => ({
     },
   },
   title: {
-    flexGrow: 1,
+    // flexGrow: 1,
     alignItems: "center",
     display: "flex",
     textDecoration: "none",
+    // width: "100%",
+    transitionDuration: "0.3s",
+    "&:hover": {
+      opacity: "0.85",
+    },
+    "&:active": {
+      transform: "scale(0.97)",
+    },
   },
   image: {
     marginRight: "10px",

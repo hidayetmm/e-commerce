@@ -23,7 +23,12 @@ const Product = ({ product, onAddToCart }) => {
       />
       <CardContent>
         <div className={classes.cardContent}>
-          <Typography variant="h5" gutterBottom>
+          <Typography
+            className={classes.name}
+            variant="h5"
+            align="left"
+            gutterBottom
+          >
             {product.name}
           </Typography>
           <Typography variant="h5">
