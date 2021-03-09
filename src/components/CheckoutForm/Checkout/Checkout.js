@@ -10,6 +10,8 @@ import {
   Button,
 } from "@material-ui/core";
 import useStyles from "./styles";
+import AddressForm from "../AddressForm";
+import PaymentForm from "../PaymentForm";
 
 const steps = ["Shipping address", "Payment details"];
 
@@ -18,8 +20,11 @@ const Checkout = () => {
 
   const classes = useStyles();
 
+  const Form = () => (activeStep === 0 ? <AddressForm /> : <PaymentForm />);
+  const Confirmation = () => <div>Confirmation</div>;
+
   return (
-    <>
+    <div>
       <div className={classes.toolbar}></div>
       <main className={classes.layout}>
         <Paper classes={classes.paper}>
@@ -33,9 +38,10 @@ const Checkout = () => {
               </Step>
             ))}
           </Stepper>
+          {activeStep === steps.length ? <Confirmation /> : <Form />}
         </Paper>
       </main>
-    </>
+    </div>
   );
 };
 

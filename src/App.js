@@ -4,6 +4,7 @@ import "./App.css";
 import { commerce } from "./lib/commerce";
 import Products from "./components/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 
@@ -71,6 +72,7 @@ const App = () => {
             <Checkout />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );
