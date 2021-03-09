@@ -52,6 +52,8 @@ const Cart = ({
             Empty Cart
           </Button>
           <Button
+            component={Link}
+            to="/checkout"
             className={classes.checkoutButton}
             size="large"
             type="button"
@@ -74,7 +76,7 @@ const Cart = ({
       <div className={classes.toolbar}></div>
       <Typography
         className={classes.title}
-        variant="h3"
+        variant="h4"
         align="left"
         gutterBottom
       >
