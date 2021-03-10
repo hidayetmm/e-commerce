@@ -11,6 +11,11 @@ export default makeStyles((theme) => ({
       marginLeft: drawerWidth,
     },
   },
+  button: {
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "30px",
+    },
+  },
   grow: {
     flexGrow: 1,
   },

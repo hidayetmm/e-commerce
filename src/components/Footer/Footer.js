@@ -57,7 +57,12 @@ const Footer = () => {
               <IconButton component={Link} to="/cart" aria-label="Instagram">
                 <InstagramIcon color="secondary" />
               </IconButton>
-              <IconButton component={Link} to="/cart" aria-label="Whatsapp">
+              <IconButton
+                component={Link}
+                href="https://api.whatsapp.com/send?phone=+994513300091"
+                target="_blank"
+                aria-label="Whatsapp"
+              >
                 <WhatsAppIcon color="action" />
               </IconButton>
               <br />
@@ -66,6 +71,8 @@ const Footer = () => {
                 color="inherit"
                 size="small"
                 startIcon={<CallIcon />}
+                className={classes.button}
+                href="tel:0513300091"
               >
                 051 330 0091
               </Button>
