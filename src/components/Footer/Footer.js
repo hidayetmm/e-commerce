@@ -3,16 +3,16 @@ import {
   AppBar,
   Toolbar,
   IconButton,
+  Button,
   Link,
   Typography,
-  Container,
   Grid,
 } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import CallIcon from "@material-ui/icons/Call";
-import ShoppingCart from "@material-ui/icons/ShoppingCart";
+import logo from "../../assets/logo.png";
 
 import useStyles from "./styles";
 
@@ -30,16 +30,25 @@ const Footer = () => {
             alignItems="center"
           >
             <Grid item md={6} sm={6} xs={12}>
-              <Typography variant="body1" color="inherit" component="div">
-                Gent's Shop | The Sharpest Shop
-              </Typography>
-            </Grid>
-            <Grid item md={6} sm={6} xs={12}>
+              <img
+                src={logo}
+                alt="Gent's Shop"
+                height="80px"
+                // className={classes.image}
+              />
               <Typography
                 variant="body1"
                 color="inherit"
-                style={{ display: "inline-block" }}
+                gutterBottom
+                style={{ padding: "1%" }}
               >
+                Gent's Shop | The Sharpest Shop
+                <br />
+                Baku, Azerbaijan
+              </Typography>
+            </Grid>
+            <Grid item md={6} sm={6} xs={12}>
+              <Typography variant="body1" color="inherit">
                 Contact:
               </Typography>
               <IconButton component={Link} to="/cart" aria-label="Facebook">
@@ -51,9 +60,15 @@ const Footer = () => {
               <IconButton component={Link} to="/cart" aria-label="Whatsapp">
                 <WhatsAppIcon color="action" />
               </IconButton>
-              <IconButton component={Link} to="/cart" aria-label="Call">
-                <CallIcon color="action" />
-              </IconButton>
+              <br />
+              <Button
+                variant="outlined"
+                color="inherit"
+                size="small"
+                startIcon={<CallIcon />}
+              >
+                051 330 0091
+              </Button>
             </Grid>
           </Grid>
         </Toolbar>
