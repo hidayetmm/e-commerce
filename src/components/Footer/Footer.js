@@ -51,10 +51,20 @@ const Footer = () => {
               <Typography variant="body1" color="inherit">
                 Contact:
               </Typography>
-              <IconButton component={Link} to="/cart" aria-label="Facebook">
+              <IconButton
+                component={Link}
+                href="https://www.facebook.com/gentsshop.az"
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <FacebookIcon color="primary" />
               </IconButton>
-              <IconButton component={Link} to="/cart" aria-label="Instagram">
+              <IconButton
+                component={Link}
+                aria-label="Instagram"
+                href="https://www.instagram.com/gentsshop.az/"
+                target="_blank"
+              >
                 <InstagramIcon color="secondary" />
               </IconButton>
               <IconButton
