@@ -20,6 +20,7 @@ const Product = ({ product, onAddToCart }) => {
         className={classes.media}
         image={product.media.source}
         title={product.name}
+        style={{ objectFit: "contain" }}
       />
       <CardContent>
         <div className={classes.cardContent}>
@@ -39,6 +40,7 @@ const Product = ({ product, onAddToCart }) => {
           dangerouslySetInnerHTML={{ __html: product.description }}
           variant="body2"
           color="textSecondary"
+          align="left"
         />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
