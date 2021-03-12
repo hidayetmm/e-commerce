@@ -20,19 +20,18 @@ const Product = ({ product, onAddToCart }) => {
         className={classes.media}
         image={product.media.source}
         title={product.name}
-        style={{ objectFit: "contain" }}
       />
-      <CardContent>
+      <CardContent className={classes.Content}>
         <div className={classes.cardContent}>
           <Typography
             className={classes.name}
-            variant="h5"
+            variant="body1"
             align="left"
             gutterBottom
           >
             {product.name}
           </Typography>
-          <Typography variant="h5">
+          <Typography variant="body1">
             {product.price.formatted_with_symbol}
           </Typography>
         </div>

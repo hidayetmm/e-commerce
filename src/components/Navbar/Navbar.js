@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -8,8 +8,10 @@ import {
   MenuItem,
   Menu,
   Typography,
+  Hidden,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
+import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import logo from "../../assets/logo.png";
 import useStyles from "./styles";
 
@@ -20,6 +22,12 @@ const Navbar = ({ totalItems }) => {
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
+          <Hidden mdUp>
+            <IconButton>
+              <MenuRoundedIcon />
+            </IconButton>
+          </Hidden>
+
           <Typography
             component={Link}
             to="/"
@@ -35,8 +43,30 @@ const Navbar = ({ totalItems }) => {
             />
           </Typography>
           <div className={classes.grow} />
+          <Hidden smDown>
+            <div className={classes.nav}>
+              <Typography
+                component={NavLink}
+                to="/"
+                variant="body1"
+                className={classes.navTitle}
+                color="inherit"
+              >
+                Contact
+              </Typography>
+              <Typography
+                component={NavLink}
+                to="/"
+                variant="body1"
+                className={classes.navTitle}
+                color="inherit"
+              >
+                About us
+              </Typography>
+            </div>
+          </Hidden>
           {location.pathname === "/" && (
-            <div className={classes.button}>
+            <>
               <IconButton
                 component={Link}
                 to="/cart"
@@ -47,7 +77,7 @@ const Navbar = ({ totalItems }) => {
                   <ShoppingCart />
                 </Badge>
               </IconButton>
-            </div>
+            </>
           )}
         </Toolbar>
       </AppBar>

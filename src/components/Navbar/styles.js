@@ -25,8 +25,26 @@ export default makeStyles((theme) => ({
       transform: "scale(0.97)",
     },
   },
+  nav: {
+    display: "flex",
+    width: "25%",
+    justifyContent: "space-evenly",
+  },
+  navTitle: {
+    alignItems: "center",
+    // display: "flex",
+    textDecoration: "none",
+    transitionDuration: "0.3s",
+    "&:hover": {
+      opacity: "0.65",
+      borderBottom: "1px solid gray",
+    },
+    "&:active": {
+      transform: "scale(0.97)",
+    },
+  },
   image: {
-    marginRight: "10px",
+    // marginRight: "10px",
   },
   menuButton: {
     marginRight: theme.spacing(2),

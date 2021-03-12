@@ -7,6 +7,7 @@ export default makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    margin: "auto",
   },
   media: {
     height: 0,
@@ -20,6 +21,9 @@ export default makeStyles(() => ({
   cardContent: {
     display: "flex",
     justifyContent: "space-between",
+  },
+  Content: {
+    flexGrow: 1,
   },
   name: {
     width: "60%",
