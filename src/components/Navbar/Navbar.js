@@ -61,7 +61,7 @@ const Navbar = ({ totalItems }) => {
                 className={classes.navTitle}
                 color="inherit"
               >
-                About us
+                About
               </Typography>
             </div>
           </Hidden>

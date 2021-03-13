@@ -11,11 +11,13 @@ import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
 
     setProducts(data);
+    setLoading(false);
   };
 
   const fetchCart = async () => {
@@ -58,7 +60,11 @@ const App = () => {
         <Navbar totalItems={cart.total_items} />
         <Switch>
           <Route exact path="/">
-            <Products products={products} onAddToCart={handleAddToCart} />
+            <Products
+              products={products}
+              onAddToCart={handleAddToCart}
+              loading={loading}
+            />
           </Route>
           <Route exact path="/cart">
             <Cart

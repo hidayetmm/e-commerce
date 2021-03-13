@@ -10,4 +10,9 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  skeleton: {
+    flexGrow: 1,
+    padding: theme.spacing(9),
+    height: "100%",
+  },
 }));
