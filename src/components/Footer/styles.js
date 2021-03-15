@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
+    marginTop: "auto",
   },
   button: {
     [theme.breakpoints.down("sm")]: {

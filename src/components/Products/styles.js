@@ -10,9 +10,12 @@ export default makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  skeleton: {
+  loader: {
+    display: "flex",
     flexGrow: 1,
-    padding: theme.spacing(9),
-    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: theme.spacing(10),
+    height: "40vh",
   },
 }));

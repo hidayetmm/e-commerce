@@ -42,7 +42,6 @@ const Cart = ({
         </Typography>
         <div>
           <Button
-            component={Link}
             className={classes.emptyButton}
             size="large"
             type="button"

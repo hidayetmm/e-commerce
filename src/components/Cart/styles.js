@@ -16,7 +16,7 @@ export default makeStyles((theme) => ({
   },
   checkoutButton: {
     minWidth: "150px",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("md")]: {
       marginBottom: "5px",
     },
     [theme.breakpoints.up("xs")]: {
