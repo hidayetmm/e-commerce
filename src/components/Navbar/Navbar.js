@@ -1,31 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
   IconButton,
   Badge,
-  MenuItem,
-  Menu,
   Typography,
   Hidden,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
+import LeftDrawer from "./LeftDrawer/LeftDrawer";
 import logo from "../../assets/logo.png";
 import useStyles from "./styles";
 
 const Navbar = ({ totalItems }) => {
+  const [drawerToggle, setDrawerToggle] = useState(false);
+
   const classes = useStyles();
   const location = useLocation();
+
+  const handleDrawerToggle = () => {
+    setDrawerToggle(!drawerToggle);
+  };
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
           <Hidden mdUp>
-            <IconButton>
+            <IconButton
+              onClick={handleDrawerToggle}
+              style={{ padding: "12px 20px 12px 5px" }}
+              disableRipple
+              disableFocusRipple
+            >
               <MenuRoundedIcon />
             </IconButton>
+            <LeftDrawer
+              drawerToggle={drawerToggle}
+              handleDrawer={handleDrawerToggle}
+            />
           </Hidden>
 
           <Typography
@@ -48,7 +62,7 @@ const Navbar = ({ totalItems }) => {
               <Typography
                 component={NavLink}
                 to="/"
-                variant="body1"
+                variant="button"
                 className={classes.navTitle}
                 color="inherit"
               >
@@ -57,11 +71,11 @@ const Navbar = ({ totalItems }) => {
               <Typography
                 component={NavLink}
                 to="/"
-                variant="body1"
+                variant="button"
                 className={classes.navTitle}
                 color="inherit"
               >
-                About
+                About us
               </Typography>
             </div>
           </Hidden>

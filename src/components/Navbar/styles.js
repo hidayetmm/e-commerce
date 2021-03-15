@@ -37,7 +37,6 @@ export default makeStyles((theme) => ({
     transitionDuration: "0.3s",
     "&:hover": {
       opacity: "0.65",
-      borderBottom: "1px solid gray",
     },
     "&:active": {
       transform: "scale(0.97)",
