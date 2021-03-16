@@ -49,4 +49,16 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  loader: {
+    display: "flex",
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: theme.spacing(10),
+    height: "40vh",
+    "& span": {
+      borderRadius: "0% !important",
+      animationDuration: "1.7s",
+    },
+  },
 }));

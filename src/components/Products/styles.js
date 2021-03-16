@@ -17,5 +17,9 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     padding: theme.spacing(10),
     height: "40vh",
+    "& span": {
+      borderRadius: "0% !important",
+      animationDuration: "1.7s",
+    },
   },
 }));

@@ -11,7 +11,6 @@ const Cart = ({
   onEmptyCart,
 }) => {
   const classes = useStyles();
-  console.log(cart);
 
   const EmptyCart = () => (
     <Typography variant="subtitle1" align="left">

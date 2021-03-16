@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import useStyles from "./styles";
-import SquareLoader from "react-spinners/SquareLoader";
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 import Product from "./Product/Product";
 
@@ -15,7 +15,7 @@ const Products = ({ products, onAddToCart, loading }) => {
       <Grid container justify="flex-start" spacing={9}>
         {loading ? (
           <div className={classes.loader}>
-            <SquareLoader color="#14212d" />
+            <PropagateLoader size={19} color="#14212d" />
           </div>
         ) : (
           products.map((product) => (
