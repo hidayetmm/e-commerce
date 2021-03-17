@@ -130,12 +130,25 @@ const AddressForm = ({ checkoutToken }) => {
               <Grid container item xs={12} sm={6}>
                 <InputLabel>Shipping Options</InputLabel>
                 <Select
-                  value={shippingOption}
+                  value={
+                    shippingSubdivision === "BA"
+                      ? "ship_4WJvlKbYM5bYV1"
+                      : shippingOption
+                  }
                   onChange={(e) => setShippingOption(e.target.value)}
                   fullWidth
                 >
                   {options.map((option) => (
-                    <MenuItem key={option.id} value={option.id}>
+                    <MenuItem
+                      key={option.id}
+                      value={option.id}
+                      disabled={
+                        (shippingSubdivision === "BA" &&
+                          option.id === "ship_Op1YoVVXVoXLv9") ||
+                        (shippingSubdivision !== "BA" &&
+                          option.id === "ship_4WJvlKbYM5bYV1")
+                      }
+                    >
                       {option.label}
                     </MenuItem>
                   ))}
