@@ -4,6 +4,7 @@ import useStyles from "./styles";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
 import Product from "./Product/Product";
+import ProductNav from "../Navbar/ProductNav/ProductNav";
 
 const Products = ({ products, onAddToCart, loading }) => {
   const classes = useStyles();
@@ -11,6 +12,7 @@ const Products = ({ products, onAddToCart, loading }) => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
+      <ProductNav />
 
       <Grid container justify="flex-start" spacing={9}>
         {loading ? (
