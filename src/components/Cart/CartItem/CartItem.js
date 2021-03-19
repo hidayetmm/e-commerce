@@ -10,6 +10,7 @@ import {
 import IconButton from "@material-ui/core/IconButton";
 import AddRoundedIcon from "@material-ui/icons/AddRounded";
 import RemoveRoundedIcon from "@material-ui/icons/RemoveRounded";
+import DeleteIcon from "@material-ui/icons/Delete";
 import useStyles from "./styles";
 
 const CartItem = ({ item, onUpdateCartQuantity, onRemoveFromCart }) => {
@@ -18,14 +19,14 @@ const CartItem = ({ item, onUpdateCartQuantity, onRemoveFromCart }) => {
     <Card className={classes.root}>
       <CardMedia
         image={item.media.source}
-        alt={item.name}
+        title={item.name}
         className={classes.media}
       />
       <CardContent className={classes.cardContent}>
-        <Typography variant="h5" align="left" className={classes.name}>
+        <Typography variant="body1" align="left" className={classes.name}>
           {item.name}
         </Typography>
-        <Typography variant="h5">
+        <Typography variant="body1">
           {item.line_total.formatted_with_symbol}
         </Typography>
       </CardContent>
@@ -47,14 +48,14 @@ const CartItem = ({ item, onUpdateCartQuantity, onRemoveFromCart }) => {
             <AddRoundedIcon fontSize="small" />
           </IconButton>
         </div>
-        <Button
+        <IconButton
           variant="contained"
           type="button"
           color="secondary"
           onClick={() => onRemoveFromCart(item.id)}
         >
-          Remove
-        </Button>
+          <DeleteIcon />
+        </IconButton>
       </CardActions>
     </Card>
   );

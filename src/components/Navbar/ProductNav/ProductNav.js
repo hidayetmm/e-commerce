@@ -31,9 +31,9 @@ const ProductNav = () => {
         }}
         value={value}
         onChange={handleChange}
-        // indicatorColor="#123"
-        // textColor="yellow"
         centered
+        // variant="scrollable"
+        // scrollButtons="auto"
       >
         <Tab label="All products" disableRipple disableFocusRipple />
         <Tab label="Before shaving" disableRipple disableFocusRipple />

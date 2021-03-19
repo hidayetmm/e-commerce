@@ -30,10 +30,56 @@ const LeftDrawer = ({ handleDrawer, drawerToggle }) => {
               className={classes.navTitle}
               color="inherit"
             >
-              Home
+              All products
+            </Typography>
+          </ListItem>
+          <ListItem button onClick={handleDrawer}>
+            <Typography
+              component={NavLink}
+              to="/"
+              variant="button"
+              className={classes.navTitle}
+              color="inherit"
+            >
+              Before shaving
+            </Typography>
+          </ListItem>
+          <ListItem button onClick={handleDrawer}>
+            <Typography
+              component={NavLink}
+              to="/"
+              variant="button"
+              className={classes.navTitle}
+              color="inherit"
+            >
+              After shaving
+            </Typography>
+          </ListItem>
+          <ListItem button onClick={handleDrawer}>
+            <Typography
+              component={NavLink}
+              to="/"
+              variant="button"
+              className={classes.navTitle}
+              color="inherit"
+            >
+              Daily care
             </Typography>
           </ListItem>
           <Divider />
+        </List>
+        <List>
+          <ListItem button onClick={handleDrawer}>
+            <Typography
+              component={NavLink}
+              to="/"
+              variant="button"
+              className={classes.navTitle}
+              color="inherit"
+            >
+              Home
+            </Typography>
+          </ListItem>
           <ListItem button onClick={handleDrawer}>
             <Typography
               component={NavLink}
@@ -45,7 +91,6 @@ const LeftDrawer = ({ handleDrawer, drawerToggle }) => {
               Contact
             </Typography>
           </ListItem>
-          <Divider />
 
           <ListItem button onClick={handleDrawer}>
             <Typography
@@ -59,7 +104,6 @@ const LeftDrawer = ({ handleDrawer, drawerToggle }) => {
             </Typography>
           </ListItem>
         </List>
-        <Divider />
       </Drawer>
     </div>
   );

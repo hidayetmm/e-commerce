@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Hidden } from "@material-ui/core";
 import useStyles from "./styles";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
@@ -12,7 +12,9 @@ const Products = ({ products, onAddToCart, loading }) => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
-      <ProductNav />
+      <Hidden smDown>
+        <ProductNav />
+      </Hidden>
 
       <Grid container justify="flex-start" spacing={9}>
         {loading ? (
