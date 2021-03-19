@@ -11,7 +11,10 @@ import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Products
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -20,15 +23,30 @@ const App = () => {
     setLoading(false);
   };
 
+  const fetchCategories = async () => {
+    const { data } = await commerce.categories.list();
+
+    setCategories(data);
+  };
+
+  const fetchCategoryProducts = async (categoryId) => {
+    setLoading(true);
+    const { data } = await commerce.products.list({
+      category_id: [categoryId],
+    });
+    setLoading(false);
+    setProducts(data);
+  };
+
+  // Cart
+
   const fetchCart = async () => {
     const cart = await commerce.cart.retrieve();
-    console.log("OK");
     setCart(cart);
   };
 
   const handleAddToCart = async (productId, quantity) => {
     const response = await commerce.cart.add(productId, quantity);
-
     setCart(response.cart);
   };
 
@@ -53,12 +71,17 @@ const App = () => {
   useEffect(() => {
     fetchProducts();
     fetchCart();
+    fetchCategories();
   }, []);
 
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar totalItems={cart.total_items} />
+        <Navbar
+          categories={categories}
+          totalItems={cart.total_items}
+          fetchCategoryProducts={fetchCategoryProducts}
+        />
         <Switch>
           <Route exact path="/">
             <Products

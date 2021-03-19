@@ -14,7 +14,7 @@ import LeftDrawer from "./LeftDrawer/LeftDrawer";
 import logo from "../../assets/logo.png";
 import useStyles from "./styles";
 
-const Navbar = ({ totalItems }) => {
+const Navbar = ({ categories, fetchCategoryProducts, totalItems }) => {
   const [drawerToggle, setDrawerToggle] = useState(false);
 
   const classes = useStyles();
@@ -37,8 +37,10 @@ const Navbar = ({ totalItems }) => {
               <MenuRoundedIcon />
             </IconButton>
             <LeftDrawer
+              categories={categories}
               drawerToggle={drawerToggle}
               handleDrawer={handleDrawerToggle}
+              fetchCategoryProducts={fetchCategoryProducts}
             />
           </Hidden>
 

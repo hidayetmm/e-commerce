@@ -25,4 +25,10 @@ export default makeStyles((theme) => ({
       animationDuration: "1.7s",
     },
   },
+  svg: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+  },
 }));
