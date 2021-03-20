@@ -9,33 +9,16 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 
 const App = () => {
-  const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Products
-
-  const fetchProducts = async () => {
-    const { data } = await commerce.products.list();
-
-    setProducts(data);
-    setLoading(false);
-  };
+  // Categories
 
   const fetchCategories = async () => {
     const { data } = await commerce.categories.list();
 
     setCategories(data);
-  };
-
-  const fetchCategoryProducts = async (categoryId) => {
-    setLoading(true);
-    const { data } = await commerce.products.list({
-      category_id: [categoryId],
-    });
-    setLoading(false);
-    setProducts(data);
   };
 
   // Cart
@@ -69,7 +52,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchProducts();
     fetchCart();
     fetchCategories();
   }, []);
@@ -77,18 +59,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar
-          categories={categories}
-          totalItems={cart.total_items}
-          fetchCategoryProducts={fetchCategoryProducts}
-        />
+        <Navbar categories={categories} totalItems={cart.total_items} />
         <Switch>
-          <Route exact path="/">
-            <Products
-              products={products}
-              onAddToCart={handleAddToCart}
-              loading={loading}
-            />
+          <Route exact path="/checkout">
+            <Checkout cart={cart} />
           </Route>
           <Route exact path="/cart">
             <Cart
@@ -98,8 +72,8 @@ const App = () => {
               onEmptyCart={handleEmptyCart}
             />
           </Route>
-          <Route exact path="/checkout">
-            <Checkout cart={cart} />
+          <Route path="/:slug?">
+            <Products onAddToCart={handleAddToCart} loading={loading} />
           </Route>
         </Switch>
         <Footer />

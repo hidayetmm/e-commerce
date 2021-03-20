@@ -14,15 +14,21 @@ import LeftDrawer from "./LeftDrawer/LeftDrawer";
 import logo from "../../assets/logo.png";
 import useStyles from "./styles";
 
-const Navbar = ({ categories, fetchCategoryProducts, totalItems }) => {
+const Navbar = ({
+  fetchProducts,
+  categories,
+  fetchCategoryProducts,
+  totalItems,
+}) => {
   const [drawerToggle, setDrawerToggle] = useState(false);
-
-  const classes = useStyles();
-  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setDrawerToggle(!drawerToggle);
   };
+
+  const classes = useStyles();
+  const location = useLocation();
+
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
@@ -81,7 +87,7 @@ const Navbar = ({ categories, fetchCategoryProducts, totalItems }) => {
               </Typography>
             </div>
           </Hidden>
-          {location.pathname === "/" && (
+          {location.pathname !== "/cart" && (
             <>
               <IconButton
                 component={Link}

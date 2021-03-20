@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { commerce } from "../../lib/commerce";
 import { Grid, Hidden, Typography } from "@material-ui/core";
 import useStyles from "./styles";
 import PropagateLoader from "react-spinners/PropagateLoader";
@@ -7,7 +9,34 @@ import UndrawEmpty from "react-undraw-illustrations/lib/components/UndrawEmpty/U
 import Product from "./Product/Product";
 import ProductNav from "../Navbar/ProductNav/ProductNav";
 
-const Products = ({ products, onAddToCart, loading }) => {
+const Products = ({ onAddToCart }) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  let { slug } = useParams();
+  console.log(slug);
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    const { data } = await commerce.products.list();
+
+    setProducts(data);
+    setLoading(false);
+  };
+
+  const fetchCategoryProducts = async (categorySlug) => {
+    setLoading(true);
+    const { data } = await commerce.products.list({
+      category_slug: [categorySlug],
+    });
+    setLoading(false);
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    slug ? fetchCategoryProducts(slug) : fetchProducts();
+  }, [slug]);
+
   const classes = useStyles();
 
   return (

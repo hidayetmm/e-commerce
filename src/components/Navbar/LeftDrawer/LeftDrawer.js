@@ -26,33 +26,28 @@ const LeftDrawer = ({
           paper: classes.drawerPaper,
         }}
       >
-        <List>
+        <List onClick={handleDrawer}>
           <ListItem>
             <Typography variant="body2" color="textSecondary">
               Categories
             </Typography>
           </ListItem>
           {categories.map((category) => (
-            <ListItem
-              button
-              key={category.id}
-              onClick={() => fetchCategoryProducts(category.id)}
-            >
+            <ListItem button key={category.id}>
               <Typography
                 children={category.name}
                 component={NavLink}
-                to="/"
+                to={`/${category.slug}`}
                 variant="button"
                 className={classes.navTitle}
                 color="inherit"
-                onClick={handleDrawer}
                 gutterBottom
               />
             </ListItem>
           ))}
           <Divider />
-          <List>
-            <ListItem button onClick={handleDrawer}>
+          <List onClick={handleDrawer}>
+            <ListItem button>
               <Typography
                 component={NavLink}
                 to="/"
@@ -63,7 +58,7 @@ const LeftDrawer = ({
                 Home
               </Typography>
             </ListItem>
-            <ListItem button onClick={handleDrawer}>
+            <ListItem button>
               <Typography
                 component={NavLink}
                 to="/"
@@ -75,7 +70,7 @@ const LeftDrawer = ({
               </Typography>
             </ListItem>
 
-            <ListItem button onClick={handleDrawer}>
+            <ListItem button>
               <Typography
                 component={NavLink}
                 to="/"
