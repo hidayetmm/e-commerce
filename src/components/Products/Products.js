@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { commerce } from "../../lib/commerce";
 import { Grid, Hidden, Typography } from "@material-ui/core";
 import useStyles from "./styles";
@@ -12,9 +12,9 @@ import ProductNav from "../Navbar/ProductNav/ProductNav";
 const Products = ({ onAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   let { slug } = useParams();
-  console.log(slug);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -25,12 +25,19 @@ const Products = ({ onAddToCart }) => {
   };
 
   const fetchCategoryProducts = async (categorySlug) => {
-    setLoading(true);
-    const { data } = await commerce.products.list({
-      category_slug: [categorySlug],
-    });
-    setLoading(false);
-    setProducts(data);
+    try {
+      setLoading(true);
+      const { data } = await commerce.products.list({
+        category_slug: [categorySlug],
+      });
+      setLoading(false);
+      setProducts(data);
+      console.log(products);
+    } catch (e) {
+      setLoading(false);
+      setError(true);
+      console.log(products);
+    }
   };
 
   useEffect(() => {
@@ -67,6 +74,7 @@ const Products = ({ onAddToCart }) => {
             <Typography color="textSecondary">No products found</Typography>
           </div>
         )}
+        {error ? <Redirect to="/404" /> : null}
       </Grid>
     </main>
   );

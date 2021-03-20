@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import { commerce } from "./lib/commerce";
 import Products from "./components/Products/Products";
@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout";
+import NotFound from "./components/NotFound/NotFound";
 
 const App = () => {
   const [cart, setCart] = useState({});
@@ -72,9 +73,11 @@ const App = () => {
               onEmptyCart={handleEmptyCart}
             />
           </Route>
+          <Route path="/404" component={NotFound} />
           <Route path="/:slug?">
             <Products onAddToCart={handleAddToCart} loading={loading} />
           </Route>
+          {/* <Redirect from="*" to="/404" /> */}
         </Switch>
         <Footer />
       </div>
