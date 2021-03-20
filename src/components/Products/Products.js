@@ -9,7 +9,7 @@ import UndrawEmpty from "react-undraw-illustrations/lib/components/UndrawEmpty/U
 import Product from "./Product/Product";
 import ProductNav from "../Navbar/ProductNav/ProductNav";
 
-const Products = ({ onAddToCart }) => {
+const Products = ({ categories, onAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -50,7 +50,7 @@ const Products = ({ onAddToCart }) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       <Hidden smDown>
-        <ProductNav />
+        <ProductNav categories={categories} />
       </Hidden>
 
       <Grid container justify="flex-start" spacing={9}>

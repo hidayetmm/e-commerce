@@ -75,7 +75,11 @@ const App = () => {
           </Route>
           <Route path="/404" component={NotFound} />
           <Route path="/:slug?">
-            <Products onAddToCart={handleAddToCart} loading={loading} />
+            <Products
+              onAddToCart={handleAddToCart}
+              loading={loading}
+              categories={categories}
+            />
           </Route>
           {/* <Redirect from="*" to="/404" /> */}
         </Switch>

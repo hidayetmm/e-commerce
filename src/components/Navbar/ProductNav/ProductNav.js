@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductNav = () => {
+const ProductNav = ({ categories }) => {
   const classes = useStyles();
 
   const [value, setValue] = React.useState(0);
@@ -35,10 +35,24 @@ const ProductNav = () => {
         // variant="scrollable"
         // scrollButtons="auto"
       >
-        <Tab label="All products" disableRipple disableFocusRipple />
-        <Tab label="Before shaving" disableRipple disableFocusRipple />
-        <Tab label="After shaving" disableRipple disableFocusRipple />
-        <Tab label="Daily care" disableRipple disableFocusRipple />
+        <Tab
+          component={Link}
+          to="/"
+          label="All products"
+          key="all"
+          disableRipple
+          disableFocusRipple
+        />
+        {categories.map((category) => (
+          <Tab
+            component={Link}
+            to={`/${category.slug}`}
+            label={category.name}
+            key={category.id}
+            disableRipple
+            disableFocusRipple
+          />
+        ))}
       </Tabs>
     </div>
   );
