@@ -7,14 +7,8 @@ import ListItem from "@material-ui/core/ListItem";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "./styles";
 
-const LeftDrawer = ({
-  categories,
-  fetchCategoryProducts,
-  handleDrawer,
-  drawerToggle,
-}) => {
+const LeftDrawer = ({ categories, handleDrawer, drawerToggle }) => {
   const classes = useStyles();
-  console.log(categories);
   return (
     <div>
       <Drawer

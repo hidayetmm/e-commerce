@@ -28,4 +28,8 @@ export default makeStyles(() => ({
   name: {
     width: "60%",
   },
+  link: {
+    color: "inherit",
+    textDecoration: "inherit",
+  },
 }));

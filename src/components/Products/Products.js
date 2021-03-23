@@ -32,7 +32,6 @@ const Products = ({ categories, onAddToCart }) => {
       });
       setLoading(false);
       setProducts(data);
-      console.log(products);
     } catch (e) {
       setLoading(false);
       setError(true);

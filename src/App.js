@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import { commerce } from "./lib/commerce";
 import Products from "./components/Products/Products";
+import ProductView from "./components/ProductView/ProductView";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Cart from "./components/Cart/Cart";
@@ -26,6 +27,7 @@ const App = () => {
 
   const fetchCart = async () => {
     const cart = await commerce.cart.retrieve();
+    console.log(cart);
     setCart(cart);
   };
 
@@ -74,6 +76,13 @@ const App = () => {
             />
           </Route>
           <Route path="/404" component={NotFound} />
+          <Route path="/:category/:id">
+            <ProductView
+              onAddToCart={handleAddToCart}
+              // loading={loading}
+              // categories={categories}
+            />
+          </Route>
           <Route path="/:slug?">
             <Products
               onAddToCart={handleAddToCart}
