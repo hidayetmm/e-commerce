@@ -43,23 +43,14 @@ export default makeStyles((theme) => ({
   },
   media: {
     height: "82vh",
+    [theme.breakpoints.down("xs")]: {
+      height: "40vh",
+    },
   },
   magnifier: {
     "& img": {
       objectFit: "contain",
       maxWidth: "90%",
-    },
-  },
-  cardActions: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    paddingBottom: "10%",
-
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
-      justifyContent: "space-between",
-      height: "12%",
-      paddingBottom: "15%",
     },
   },
   Content: {
@@ -68,6 +59,32 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     maxWidth: "37%",
     width: "fill-available",
+    [theme.breakpoints.down("xs")]: {
+      maxWidth: "100%",
+    },
+  },
+  cardContent: {
+    flexGrow: 3,
+  },
+  cardActions: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    padding: "10% 0",
+
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      justifyContent: "space-between",
+      height: "12%",
+      paddingBottom: "15%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "10% 0",
+    },
+  },
+  buttonGroup: {
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "5%",
+    },
   },
   link: {
     color: "inherit",
@@ -83,8 +100,4 @@ export default makeStyles((theme) => ({
       backgroundColor: "#14212d",
     },
   },
-  // buttons: {
-  //   display: "flex",
-  //   alignItems: "center",
-  // },
 }));

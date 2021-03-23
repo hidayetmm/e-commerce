@@ -80,7 +80,7 @@ const ProductView = ({ onAddToCart }) => {
               </CardActionArea>
               <Divider orientation="vertical" flexItem light />
               <div className={classes.Content}>
-                <CardContent>
+                <CardContent className={classes.cardContent}>
                   <Typography variant="h5" align="left" gutterBottom>
                     {product.name}
                   </Typography>
@@ -94,8 +94,13 @@ const ProductView = ({ onAddToCart }) => {
                     align="left"
                   />
                 </CardContent>
+                <Divider orientation="horizontal" light />
                 <CardActions disableSpacing className={classes.cardActions}>
-                  <ButtonGroup disableRipple disableFocusRipple>
+                  <ButtonGroup
+                    disableRipple
+                    disableFocusRipple
+                    className={classes.buttonGroup}
+                  >
                     <IconButton
                       color="inherit"
                       onClick={() =>

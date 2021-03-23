@@ -93,3 +93,8 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
+::selection {
+  color: white;
+  background: #14212d;
+}
