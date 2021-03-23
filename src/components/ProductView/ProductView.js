@@ -67,11 +67,13 @@ const ProductView = ({ onAddToCart }) => {
                 >
                   <Magnifier
                     className={classes.magnifier}
-                    // height="auto"
+                    height="100%"
                     width="auto"
+                    // width="100%"
                     mgWidth={170}
                     mgHeight={170}
                     mgShape="square"
+                    zoomFactor={1}
                     src={product.media.source}
                   />
                 </div>
