@@ -125,7 +125,7 @@ const ProductView = ({ onAddToCart }) => {
                     </IconButton>
                   </ButtonGroup>
                   <Button
-                    // size="large"
+                    size="large"
                     className={classes.button}
                     aria-label="Add to cart"
                     onClick={() =>

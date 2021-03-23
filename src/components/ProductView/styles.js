@@ -53,6 +53,14 @@ export default makeStyles((theme) => ({
   cardActions: {
     display: "flex",
     justifyContent: "space-evenly",
+    paddingBottom: "10%",
+
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      justifyContent: "space-between",
+      height: "12%",
+      paddingBottom: "15%",
+    },
   },
   Content: {
     display: "flex",
@@ -69,14 +77,14 @@ export default makeStyles((theme) => ({
     color: "white",
     backgroundColor: "#14212d",
     transition: "opacity .3s, color .3s",
-    padding: "10px 15px",
+    // padding: "10px 15px",
     "&:hover": {
       opacity: "0.75",
       backgroundColor: "#14212d",
     },
   },
-  buttons: {
-    display: "flex",
-    alignItems: "center",
-  },
+  // buttons: {
+  //   display: "flex",
+  //   alignItems: "center",
+  // },
 }));
