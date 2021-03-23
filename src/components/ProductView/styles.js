@@ -42,9 +42,22 @@ export default makeStyles((theme) => ({
     },
   },
   media: {
-    height: 0,
-    paddingTop: "100%", // 16:9 (56.25%)
-    backgroundSize: "contain !important",
+    // height: 0,
+    // paddingTop: "100%", // 16:9 (56.25%)
+    // backgroundSize: "contain !important",
+    //
+    // display: "table-cell",
+    // position: "relative",
+    height: "82vh",
+    // verticalAlign: "middle",
+    // textAlign: "center",
+  },
+  magnifier: {
+    height: "100% !important",
+    width: "100% !important",
+    "& img": {
+      objectFit: "contain",
+    },
   },
   cardActions: {
     display: "flex",

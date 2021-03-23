@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { commerce } from "../../lib/commerce";
+import Magnifier from "react-magnifier";
 import {
   Grid,
   Card,
@@ -59,11 +60,21 @@ const ProductView = ({ onAddToCart }) => {
           <Grid item key={product.id} xs={10} md={10} lg={9}>
             <Card className={classes.root}>
               <CardActionArea disableRipple>
-                <CardMedia
+                <div
                   className={classes.media}
-                  image={product.media.source}
-                  title={product.name}
-                />
+                  // // image={product.media.source}
+                  // title={product.name}
+                >
+                  <Magnifier
+                    className={classes.magnifier}
+                    // height="auto"
+                    width="auto"
+                    mgWidth={170}
+                    mgHeight={170}
+                    mgShape="square"
+                    src={product.media.source}
+                  />
+                </div>
               </CardActionArea>
               <Divider orientation="vertical" flexItem light />
               <div className={classes.Content}>
