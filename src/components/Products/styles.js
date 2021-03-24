@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(1, 9, 9, 9),
     [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(5, 6, 9, 6),
+      padding: theme.spacing(7, 4, 9, 4),
     },
   },
   root: {

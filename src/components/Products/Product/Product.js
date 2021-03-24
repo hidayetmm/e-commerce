@@ -47,14 +47,7 @@ const Product = ({ product, onAddToCart }) => {
                 variant="body2"
                 color="textSecondary"
                 align="left"
-                display="block"
-                style={{
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  display: "-webkit-box",
-                  WebkitLineClamp: "2",
-                  WebkitBoxOrient: "vertical",
-                }}
+                className={classes.description}
               />
             </div>
           </CardContent>

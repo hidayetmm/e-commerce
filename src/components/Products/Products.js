@@ -52,7 +52,7 @@ const Products = ({ categories, onAddToCart }) => {
         <ProductNav categories={categories} />
       </Hidden>
 
-      <Grid container justify="flex-start" spacing={9}>
+      <Grid container justify="flex-start" spacing={7}>
         {loading ? (
           <div className={classes.loader}>
             <PropagateLoader size={19} color="#14212d" />

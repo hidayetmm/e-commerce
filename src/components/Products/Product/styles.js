@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
   root: {
     maxWidth: "100%",
     height: "100%",
@@ -31,5 +31,18 @@ export default makeStyles(() => ({
   link: {
     color: "inherit",
     textDecoration: "inherit",
+  },
+  description: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    WebkitLineClamp: "2",
+    WebkitBoxOrient: "vertical",
+    [theme.breakpoints.down("xs")]: {
+      height: "2.86em",
+      lineHeight: "1.43em",
+      WebkitLineClamp: "1",
+    },
+    // height: "9em",
   },
 }));
