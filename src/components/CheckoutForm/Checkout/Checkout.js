@@ -52,11 +52,11 @@ const Checkout = ({ cart }) => {
           <PropagateLoader size={19} color="#14212d" />
         </div>
       ) : (
-        <div>
+        <main className={classes.content}>
           <div className={classes.toolbar}></div>
           <main className={classes.layout}>
             <Paper className={classes.paper}>
-              <Typography variant="h4" align="center">
+              <Typography variant="h5" align="center">
                 Checkout
               </Typography>
               <Stepper activeStep={activeStep} className={classes.stepper}>
@@ -73,7 +73,7 @@ const Checkout = ({ cart }) => {
               )}
             </Paper>
           </main>
-        </div>
+        </main>
       )}
     </>
   );

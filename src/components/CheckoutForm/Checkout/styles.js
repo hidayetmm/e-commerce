@@ -4,6 +4,9 @@ export default makeStyles((theme) => ({
   appBar: {
     position: "relative",
   },
+  content: {
+    backgroundColor: theme.palette.background.default,
+  },
   toolbar: theme.mixins.toolbar,
   layout: {
     marginTop: "5%",
