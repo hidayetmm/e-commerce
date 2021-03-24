@@ -21,7 +21,6 @@ export default makeStyles((theme) => ({
     marginBottom: theme.spacing(3),
     padding: theme.spacing(2),
     [theme.breakpoints.down("xs")]: {
-      width: "100%",
       marginTop: 60,
     },
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {

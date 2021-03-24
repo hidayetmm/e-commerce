@@ -86,87 +86,85 @@ const AddressForm = ({ checkoutToken }) => {
 
   return (
     <>
-      <>
-        <Typography variant="h6" align="left" gutterBottom>
-          Shipping Address
-        </Typography>
-        <FormProvider {...methods}>
-          <form onSubmit="">
-            <Grid container spacing={3}>
-              <FormInput name="firstName" label="First name" />
-              <FormInput name="lastName" label="Last name" />
-              <FormInput name="address1" label="Address" />
-              <FormInput name="email" label="Email" />
-              <FormInput name="city" label="City" />
-              <FormInput name="zip" label="ZIP / Postal code" />
-              <Grid container item xs={12} sm={6}>
-                <InputLabel>Shipping Country</InputLabel>
-                <Select
-                  value={shippingCountry}
-                  onChange={(e) => setShippingCountry(e.target.value)}
-                  fullWidth
-                >
-                  {countries.map((country) => (
-                    <MenuItem key={country.id} value={country.id}>
-                      {country.label}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Grid>
-              <Grid container item xs={12} sm={6}>
-                <InputLabel>Shipping Subdivision</InputLabel>
-                <Select
-                  value={shippingSubdivision}
-                  onChange={(e) => setShippingSubdivision(e.target.value)}
-                  fullWidth
-                >
-                  {subdivisions.map((subdivision) => (
-                    <MenuItem key={subdivision.id} value={subdivision.id}>
-                      {subdivision.label}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Grid>
-              <Grid container item xs={12} sm={6}>
-                <InputLabel>Shipping Options</InputLabel>
-                <Select
-                  value={
-                    shippingSubdivision === "BA"
-                      ? "ship_4WJvlKbYM5bYV1"
-                      : shippingOption
-                  }
-                  onChange={(e) => setShippingOption(e.target.value)}
-                  fullWidth
-                >
-                  {options.map((option) => (
-                    <MenuItem
-                      key={option.id}
-                      value={option.id}
-                      disabled={
-                        (shippingSubdivision === "BA" &&
-                          option.id === "ship_Op1YoVVXVoXLv9") ||
-                        (shippingSubdivision !== "BA" &&
-                          option.id === "ship_4WJvlKbYM5bYV1")
-                      }
-                    >
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Grid>
+      <Typography variant="h6" align="left" gutterBottom>
+        Shipping Address
+      </Typography>
+      <FormProvider {...methods}>
+        <form onSubmit="">
+          <Grid container spacing={3}>
+            <FormInput name="firstName" label="First name" />
+            <FormInput name="lastName" label="Last name" />
+            <FormInput name="address1" label="Address" />
+            <FormInput name="email" label="Email" />
+            <FormInput name="city" label="City" />
+            <FormInput name="zip" label="ZIP / Postal code" />
+            <Grid container item xs={12} sm={6}>
+              <InputLabel>Shipping Country</InputLabel>
+              <Select
+                value={shippingCountry}
+                onChange={(e) => setShippingCountry(e.target.value)}
+                fullWidth
+              >
+                {countries.map((country) => (
+                  <MenuItem key={country.id} value={country.id}>
+                    {country.label}
+                  </MenuItem>
+                ))}
+              </Select>
             </Grid>
-            <br />
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <Button component={Link} to="/cart" variant="outlined">
-                Back to Cart
-              </Button>
-              <Button type="submit" variant="outlined" color="primary">
-                Next
-              </Button>
-            </div>
-          </form>
-        </FormProvider>
-      </>
+            <Grid container item xs={12} sm={6}>
+              <InputLabel>Shipping Subdivision</InputLabel>
+              <Select
+                value={shippingSubdivision}
+                onChange={(e) => setShippingSubdivision(e.target.value)}
+                fullWidth
+              >
+                {subdivisions.map((subdivision) => (
+                  <MenuItem key={subdivision.id} value={subdivision.id}>
+                    {subdivision.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
+            <Grid container item xs={12} sm={6}>
+              <InputLabel>Shipping Options</InputLabel>
+              <Select
+                value={
+                  shippingSubdivision === "BA"
+                    ? "ship_4WJvlKbYM5bYV1"
+                    : shippingOption
+                }
+                onChange={(e) => setShippingOption(e.target.value)}
+                fullWidth
+              >
+                {options.map((option) => (
+                  <MenuItem
+                    key={option.id}
+                    value={option.id}
+                    disabled={
+                      (shippingSubdivision === "BA" &&
+                        option.id === "ship_Op1YoVVXVoXLv9") ||
+                      (shippingSubdivision !== "BA" &&
+                        option.id === "ship_4WJvlKbYM5bYV1")
+                    }
+                  >
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
+          </Grid>
+          <br />
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Button component={Link} to="/cart" variant="outlined">
+              Back to Cart
+            </Button>
+            <Button type="submit" variant="outlined" color="primary">
+              Next
+            </Button>
+          </div>
+        </form>
+      </FormProvider>
     </>
   );
 };
