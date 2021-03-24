@@ -12,32 +12,46 @@ export default makeStyles((theme) => ({
   items: {
     paddingTop: "3vh",
   },
+  grid: {
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "5vh",
+    },
+  },
+  buttons: {
+    display: "flex",
+    justifyContent: "space-between",
+    minWidth: "26%",
+    [theme.breakpoints.down("xs")]: {
+      height: "14vh",
+      flexDirection: "column-reverse",
+      marginTop: "10px",
+    },
+  },
   emptyButton: {
-    // color: "white",
-    // backgroundColor: "#14212d",
+    minWidth: "150px",
     transition: "opacity .3s",
     // padding: "10px 15px",
     "&:hover": {
       opacity: "0.75",
     },
-    [theme.breakpoints.down("md")]: {
-      marginBottom: "5px",
-    },
-    [theme.breakpoints.up("xs")]: {
+    [theme.breakpoints.between("sm", "md")]: {
       marginRight: "20px",
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: "15px 0",
     },
   },
   checkoutButton: {
+    minWidth: "150px",
     color: "white",
     backgroundColor: "#14212d",
     transition: "opacity .3s, color .3s",
-    // padding: "10px 15px",
     "&:hover": {
       opacity: "0.75",
       backgroundColor: "#14212d",
     },
-    [theme.breakpoints.down("md")]: {
-      marginBottom: "5px",
+    [theme.breakpoints.only("xs")]: {
+      padding: "15px 0",
     },
   },
   link: {
@@ -45,8 +59,11 @@ export default makeStyles((theme) => ({
   },
   cardDetails: {
     display: "flex",
-    marginTop: "10%",
+    marginTop: "5vh",
     width: "100%",
     justifyContent: "space-between",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+    },
   },
 }));

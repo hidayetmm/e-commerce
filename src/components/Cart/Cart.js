@@ -30,22 +30,25 @@ const Cart = ({
 
   const FilledCart = () => (
     <div className={classes.items}>
-      <Grid container spacing={3}>
-        {cart.line_items.map((item) => (
-          <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
-            <CartItem
-              item={item}
-              onUpdateCartQuantity={onUpdateCartQuantity}
-              onRemoveFromCart={onRemoveFromCart}
-            />
-          </Grid>
-        ))}
-      </Grid>
+      <div className={classes.grid}>
+        <Grid container spacing={3}>
+          {cart.line_items.map((item) => (
+            <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
+              <CartItem
+                item={item}
+                onUpdateCartQuantity={onUpdateCartQuantity}
+                onRemoveFromCart={onRemoveFromCart}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </div>
+      <Divider />
       <div className={classes.cardDetails}>
         <Typography variant="h6" gutterBottom>
           Subtotal: {cart.subtotal.formatted_with_symbol}
         </Typography>
-        <div>
+        <div className={classes.buttons}>
           <Button
             className={classes.emptyButton}
             size="large"
@@ -67,7 +70,7 @@ const Cart = ({
             disableElevation
             disableRipple
           >
-            Checkout
+            Proceed to checkout
           </Button>
         </div>
       </div>

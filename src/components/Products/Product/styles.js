@@ -33,6 +33,8 @@ export default makeStyles((theme) => ({
     textDecoration: "inherit",
   },
   description: {
+    height: "2.86em",
+    lineHeight: "1.43em",
     overflow: "hidden",
     textOverflow: "ellipsis",
     display: "-webkit-box",
