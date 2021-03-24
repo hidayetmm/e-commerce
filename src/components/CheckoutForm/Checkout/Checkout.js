@@ -62,7 +62,18 @@ const Checkout = ({ cart }) => {
               <Stepper activeStep={activeStep} className={classes.stepper}>
                 {steps.map((step) => (
                   <Step key={step}>
-                    <StepLabel>{step}</StepLabel>
+                    <StepLabel
+                      StepIconProps={{
+                        classes: {
+                          root: classes.step,
+                          completed: classes.completed,
+                          active: classes.active,
+                          disabled: classes.disabled,
+                        },
+                      }}
+                    >
+                      {step}
+                    </StepLabel>
                   </Step>
                 ))}
               </Stepper>

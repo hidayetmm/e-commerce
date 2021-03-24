@@ -63,4 +63,14 @@ export default makeStyles((theme) => ({
       animationDuration: "1.7s",
     },
   },
+  step: {
+    "&$completed": {},
+    "&$active": {
+      color: "#14212d",
+    },
+    "&$disabled": {},
+  },
+  completed: {},
+  active: {},
+  disabled: {},
 }));
