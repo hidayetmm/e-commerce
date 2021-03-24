@@ -4,12 +4,22 @@ export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   content: {
     backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(5, 0),
   },
   title: {
-    marginTop: "5%",
+    paddingBottom: "1vh",
+  },
+  items: {
+    paddingTop: "3vh",
   },
   emptyButton: {
-    minWidth: "150px",
+    // color: "white",
+    // backgroundColor: "#14212d",
+    transition: "opacity .3s",
+    // padding: "10px 15px",
+    "&:hover": {
+      opacity: "0.75",
+    },
     [theme.breakpoints.down("md")]: {
       marginBottom: "5px",
     },
@@ -18,12 +28,16 @@ export default makeStyles((theme) => ({
     },
   },
   checkoutButton: {
-    minWidth: "150px",
+    color: "white",
+    backgroundColor: "#14212d",
+    transition: "opacity .3s, color .3s",
+    // padding: "10px 15px",
+    "&:hover": {
+      opacity: "0.75",
+      backgroundColor: "#14212d",
+    },
     [theme.breakpoints.down("md")]: {
       marginBottom: "5px",
-    },
-    [theme.breakpoints.up("xs")]: {
-      marginRight: "20px",
     },
   },
   link: {

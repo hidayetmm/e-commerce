@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Typography, Button, Grid } from "@material-ui/core";
+import {
+  Container,
+  Typography,
+  Button,
+  Grid,
+  Divider,
+} from "@material-ui/core";
 import useStyles from "./styles";
 import CartItem from "./CartItem/CartItem";
 
@@ -23,8 +29,8 @@ const Cart = ({
   );
 
   const FilledCart = () => (
-    <>
-      <Grid container spacing={9}>
+    <div className={classes.items}>
+      <Grid container spacing={3}>
         {cart.line_items.map((item) => (
           <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
             <CartItem
@@ -36,7 +42,7 @@ const Cart = ({
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Subtotal: {cart.subtotal.formatted_with_symbol}
         </Typography>
         <div>
@@ -45,8 +51,9 @@ const Cart = ({
             size="large"
             type="button"
             variant="contained"
-            color="secondary"
             onClick={onEmptyCart}
+            disableElevation
+            disableRipple
           >
             Empty Cart
           </Button>
@@ -57,13 +64,14 @@ const Cart = ({
             size="large"
             type="button"
             variant="contained"
-            color="primary"
+            disableElevation
+            disableRipple
           >
             Checkout
           </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 
   if (!cart.line_items) {
@@ -76,12 +84,13 @@ const Cart = ({
         <div className={classes.toolbar}></div>
         <Typography
           className={classes.title}
-          variant="h5"
+          variant="h6"
           align="left"
           gutterBottom
         >
-          Your Shopping Cart
+          Shopping Cart
         </Typography>
+        <Divider />
         {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
       </Container>
     </main>

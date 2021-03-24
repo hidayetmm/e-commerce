@@ -78,7 +78,7 @@ const CartItem = ({ item, onUpdateCartQuantity, onRemoveFromCart }) => {
             <IconButton
               variant="contained"
               type="button"
-              color="secondary"
+              // color="inherit"
               onClick={() => onRemoveFromCart(item.id)}
             >
               <DeleteIcon />

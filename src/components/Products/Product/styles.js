@@ -43,6 +43,5 @@ export default makeStyles((theme) => ({
       lineHeight: "1.43em",
       WebkitLineClamp: "1",
     },
-    // height: "9em",
   },
 }));
