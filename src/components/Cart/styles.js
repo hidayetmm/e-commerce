@@ -20,7 +20,8 @@ export default makeStyles((theme) => ({
   buttons: {
     display: "flex",
     justifyContent: "space-between",
-    minWidth: "26%",
+    // minWidth: "26%",
+    minWidth: "33%",
     [theme.breakpoints.down("xs")]: {
       height: "14vh",
       flexDirection: "column-reverse",
