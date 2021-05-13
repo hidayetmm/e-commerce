@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
   cardActions: {
     display: "flex",
     justifyContent: "flex-end",
-    padding: "0 2px 2px 0",
+    padding: "0 2px 2px 0 !important",
   },
   cardContent: {
     display: "flex",
@@ -26,7 +26,7 @@ export default makeStyles((theme) => ({
   },
   Content: {
     flexGrow: 1,
-    paddingBottom: "7px",
+    paddingBottom: "7px !important",
   },
   name: {
     width: "60%",
