@@ -32,8 +32,8 @@ const Navbar = ({
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
-        <Toolbar>
-          <Hidden mdUp>
+        <Toolbar className={classes.toolbar}>
+          <Hidden mdUp implementation="css">
             <IconButton
               onClick={handleDrawerToggle}
               style={{ padding: "12px 20px 12px 5px" }}
@@ -50,21 +50,15 @@ const Navbar = ({
             />
           </Hidden>
 
-          <Typography
-            component={Link}
-            to="/"
-            variant="h6"
-            className={classes.title}
-            color="inherit"
-          >
+          <Link to="/" className={classes.title} color="inherit">
             <img
               src={logo}
               alt="Gent's Shop"
               height="55px"
               className={classes.image}
             />
-          </Typography>
-          <div className={classes.grow} />
+          </Link>
+          {/* <div className={classes.grow} /> */}
           <Hidden smDown>
             <div className={classes.nav}>
               <Typography
@@ -88,18 +82,16 @@ const Navbar = ({
             </div>
           </Hidden>
           {location.pathname !== "/cart" && (
-            <>
-              <IconButton
-                component={Link}
-                to="/cart"
-                aria-label="Show cart items"
-                color="inherit"
-              >
-                <Badge badgeContent={totalItems} color="secondary">
-                  <ShoppingCart />
-                </Badge>
-              </IconButton>
-            </>
+            <IconButton
+              component={Link}
+              to="/cart"
+              aria-label="Show cart items"
+              color="inherit"
+            >
+              <Badge badgeContent={totalItems} color="secondary">
+                <ShoppingCart />
+              </Badge>
+            </IconButton>
           )}
         </Toolbar>
       </AppBar>

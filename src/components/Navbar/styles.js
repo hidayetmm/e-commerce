@@ -3,6 +3,9 @@ import { makeStyles, fade } from "@material-ui/core/styles";
 const drawerWidth = 0;
 
 export default makeStyles((theme) => ({
+  toolbar: {
+    justifyContent: "space-between",
+  },
   appBar: {
     boxShadow: "none",
     borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
