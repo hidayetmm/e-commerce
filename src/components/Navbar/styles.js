@@ -4,7 +4,9 @@ const drawerWidth = 0;
 
 export default makeStyles((theme) => ({
   toolbar: {
-    justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "space-between",
+    },
   },
   appBar: {
     boxShadow: "none",

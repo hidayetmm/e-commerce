@@ -58,7 +58,9 @@ const Navbar = ({
               className={classes.image}
             />
           </Link>
-          {/* <div className={classes.grow} /> */}
+          <Hidden smDown>
+            <div className={classes.grow} />
+          </Hidden>
           <Hidden smDown>
             <div className={classes.nav}>
               <Typography
