@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout";
 import NotFound from "./components/NotFound/NotFound";
+import Contact from "./components/Contact/Contact";
 
 const App = () => {
   const [cart, setCart] = useState({});
@@ -64,6 +65,9 @@ const App = () => {
       <div className="App">
         <Navbar categories={categories} totalItems={cart.total_items} />
         <Switch>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
           <Route exact path="/checkout">
             <Checkout cart={cart} />
           </Route>

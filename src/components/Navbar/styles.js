@@ -17,11 +17,9 @@ export default makeStyles((theme) => ({
     },
   },
   title: {
-    // flexGrow: 1,
     alignItems: "center",
     display: "flex",
     textDecoration: "none",
-    // width: "100%",
     transitionDuration: "0.3s",
     "&:hover": {
       opacity: "0.85",
@@ -37,7 +35,6 @@ export default makeStyles((theme) => ({
   },
   navTitle: {
     alignItems: "center",
-    // display: "flex",
     textDecoration: "none",
     transitionDuration: "0.3s",
     "&:hover": {
@@ -46,9 +43,6 @@ export default makeStyles((theme) => ({
     "&:active": {
       transform: "scale(0.97)",
     },
-  },
-  image: {
-    // marginRight: "10px",
   },
   menuButton: {
     marginRight: theme.spacing(2),

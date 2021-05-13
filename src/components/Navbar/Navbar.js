@@ -8,7 +8,7 @@ import {
   Typography,
   Hidden,
 } from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
+import { ShoppingCart, ForumIcon } from "@material-ui/icons";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import LeftDrawer from "./LeftDrawer/LeftDrawer";
 import logo from "../../assets/logo.png";
@@ -65,7 +65,7 @@ const Navbar = ({
             <div className={classes.nav}>
               <Typography
                 component={NavLink}
-                to="/"
+                to="/contact"
                 variant="button"
                 className={classes.navTitle}
                 color="inherit"
