@@ -1,3 +1,4 @@
+import { blue } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
@@ -17,6 +18,7 @@ export default makeStyles((theme) => ({
   cardActions: {
     display: "flex",
     justifyContent: "flex-end",
+    padding: "0 2px 2px 0",
   },
   cardContent: {
     display: "flex",
@@ -24,6 +26,7 @@ export default makeStyles((theme) => ({
   },
   Content: {
     flexGrow: 1,
+    paddingBottom: "7px",
   },
   name: {
     width: "60%",

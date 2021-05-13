@@ -52,14 +52,14 @@ const Products = ({ categories, onAddToCart }) => {
         <ProductNav categories={categories} />
       </Hidden>
 
-      <Grid container justify="flex-start" spacing={7}>
+      <Grid container justify="flex-start" spacing={2}>
         {loading ? (
           <div className={classes.loader}>
             <PropagateLoader size={19} color="#14212d" />
           </div>
         ) : products ? (
           products.map((product) => (
-            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+            <Grid item key={product.id} xs={12} sm={6} md={4} lg={2}>
               <Product
                 product={product}
                 onAddToCart={onAddToCart}
