@@ -11,13 +11,23 @@ export default makeStyles((theme) => ({
       marginLeft: drawerWidth,
     },
     marginTop: "auto",
+    // border: "1px solid blue !important",
   },
   button: {
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: "30px",
-    },
+    // [theme.breakpoints.down("sm")]: {
+    //   marginBottom: "30px",
+    // },
   },
   grow: {
     flexGrow: 1,
+  },
+  socialIcons: {
+    display: "inline",
+    padding: "0 20px",
+
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+      marginBottom: "30px",
+    },
   },
 }));

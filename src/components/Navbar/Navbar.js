@@ -7,12 +7,24 @@ import {
   Badge,
   Typography,
   Hidden,
+  Tooltip,
 } from "@material-ui/core";
+import Fade from "@material-ui/core/Fade";
+import { withStyles } from "@material-ui/core/styles";
 import { ShoppingCart, ForumIcon } from "@material-ui/icons";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import LeftDrawer from "./LeftDrawer/LeftDrawer";
 import logo from "../../assets/logo.png";
 import useStyles from "./styles";
+
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+  },
+}))(Tooltip);
 
 const Navbar = ({
   fetchProducts,
@@ -63,6 +75,22 @@ const Navbar = ({
           </Hidden>
           <Hidden smDown>
             <div className={classes.nav}>
+              <LightTooltip
+                title="Coming soon"
+                aria-label="coming-soon"
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 500 }}
+              >
+                <Typography
+                  component={NavLink}
+                  to="/"
+                  variant="button"
+                  className={classes.navTitle}
+                  color="inherit"
+                >
+                  Blog
+                </Typography>
+              </LightTooltip>
               <Typography
                 component={NavLink}
                 to="/contact"
@@ -71,15 +99,6 @@ const Navbar = ({
                 color="inherit"
               >
                 Contact
-              </Typography>
-              <Typography
-                component={NavLink}
-                to="/"
-                variant="button"
-                className={classes.navTitle}
-                color="inherit"
-              >
-                About us
               </Typography>
             </div>
           </Hidden>

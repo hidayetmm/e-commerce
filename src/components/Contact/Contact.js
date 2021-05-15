@@ -42,6 +42,7 @@ const Contact = () => {
                   aria-label="Contact"
                   disableElevation
                   disableRipple
+                  href="tel:0513300091"
                 >
                   Give a call
                 </Button>
@@ -51,9 +52,9 @@ const Contact = () => {
               <Card variant="outlined" className={classes.card}>
                 <CardMedia image={chat} className={classes.cardMedia} />
                 <CardContent>
-                  <Typography variant="h6">Social Media</Typography>
+                  <Typography variant="h6">Drop a message</Typography>
                   <Typography variant="subtitle2">
-                    Contact on Social Media accounts
+                    Contact on Whatsapp, we'll get back to you soon.
                   </Typography>
                 </CardContent>
                 <Button
@@ -62,6 +63,8 @@ const Contact = () => {
                   aria-label="Contact"
                   disableElevation
                   disableRipple
+                  target="_blank"
+                  href="https://api.whatsapp.com/send?phone=+994513300091"
                 >
                   Send a message
                 </Button>
