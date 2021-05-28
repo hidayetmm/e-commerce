@@ -15,7 +15,6 @@ import { AddShoppingCart } from "@material-ui/icons";
 
 const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
-  console.log(product.description);
   return (
     <Card className={classes.root}>
       <Link

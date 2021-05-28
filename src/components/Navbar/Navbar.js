@@ -83,7 +83,7 @@ const Navbar = ({
               >
                 <Typography
                   component={NavLink}
-                  to="/"
+                  to="#"
                   variant="button"
                   className={classes.navTitle}
                   color="inherit"

@@ -6,7 +6,6 @@ import {
   Grid,
   Card,
   CardActionArea,
-  CardMedia,
   CardContent,
   CardActions,
   Typography,
