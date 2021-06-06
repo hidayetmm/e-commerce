@@ -2,6 +2,8 @@
 
 Try demo at [this link.](https://gentsshop.netlify.app/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/daf6266f-c9ff-4cb3-9a47-b416d2af0ac5/deploy-status)](https://app.netlify.com/sites/gentsshop/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
