@@ -1,6 +1,6 @@
 ## **Demo**
 
-Try demo at [this link.](https://gentsshop.netlify.app/)
+Check at [this link.](https://gentsshop.az/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/daf6266f-c9ff-4cb3-9a47-b416d2af0ac5/deploy-status)](https://app.netlify.com/sites/gentsshop/deploys)
 
